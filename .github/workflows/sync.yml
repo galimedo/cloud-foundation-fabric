@@ -13,6 +13,6 @@ jobs:
     steps:
       - uses: galimedo/gh-actions@main
         with:
-          target-repo: galimedo/cloud-foundation-fabric
+          target-repo: galimedo/cloud-foundation-fabric 
           upstream-repo: GoogleCloudPlatform/cloud-foundation-fabric
           github-token: ${{ secrets.GITHUB_TOKEN }}
