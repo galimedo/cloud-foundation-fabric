@@ -11,8 +11,8 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
+      - uses: galimedo/gh-actions@main
         with:
-          repository: galimedo/cloud-foundation-fabric
-          ref: main
+          target-repo: galimedo/cloud-foundation-fabric
+          upstream-repo: GoogleCloudPlatform/cloud-foundation-fabric
+          github-token: ${{ secrets.GITHUB_TOKEN }}
