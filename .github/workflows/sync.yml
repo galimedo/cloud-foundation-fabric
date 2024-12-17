@@ -1,7 +1,7 @@
 name: Sync with Upstream
 
 on:
-  workflow_dispatch:  # Allows manual trigger
+  workflow_dispatch:
 
 permissions:
   contents: write     # Changed from 'read' to 'write' to allow pushing
@@ -12,8 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4      
-      - uses: galimedo/gh-actions@main
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}  # Explicitly pass the token
+          fetch-depth: 0                      # Fetch all history
+          
+      - name: Sync with upstream
+        uses: galimedo/gh-actions@main
         with:
           target-repo: galimedo/cloud-foundation-fabric 
           upstream-repo: GoogleCloudPlatform/cloud-foundation-fabric
