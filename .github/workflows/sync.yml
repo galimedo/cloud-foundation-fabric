@@ -4,7 +4,7 @@ on:
   workflow_dispatch:  # Allows manual trigger
 
 permissions:
-  contents: read
+  contents: write     # Changed from 'read' to 'write' to allow pushing
   pull-requests: write
 
 jobs:
