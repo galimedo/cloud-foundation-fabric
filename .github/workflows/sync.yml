@@ -11,7 +11,7 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: galimedo/gh-actions@main
+      - uses: galimedo/gh-actions/sync-upstream@main
         with:
           target-repo: galimedo/cloud-foundation-fabric 
           upstream-repo: GoogleCloudPlatform/cloud-foundation-fabric
